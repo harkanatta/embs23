@@ -1,0 +1,344 @@
+---
+pagetitle: "From Disaster to Recovery:"
+subtitle: "A Study of Benthic Community Response to Anoxia"
+abstract: |
+ Síldardauðinn maður. 
+author: "Valtýr Sigurðsson"
+date: "4th July 2023"
+host: "Stellenbosch conference"
+institute: "BioPol"
+strip-comments: true
+format: 
+  revealjs:
+    slide-number: false
+    multiplex: true
+    theme: assets/monash.scss
+    show-slide-number: all
+    controls: true
+    width: 1280
+    height: 720
+    incremental: true
+    auto-stretch: false
+    css: [assets/custom.css, assets/tachyons-addon.css]
+    include-after: |
+      <link rel="stylesheet" href="assets/syntax-highlight.css">
+      <link rel="stylesheet" href="assets/fontawesome-free-6.1.1-web/css/all.min.css">
+      <script src="assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
+callout-icon: false
+output-file: index.html
+execute:
+  echo: true
+---
+
+##  {#title-slide background="images/sh.png"}
+
+```{r setup, include = FALSE}
+library(tidyverse)
+
+rotating_text <- function(x, align = "center") {
+  glue::glue('
+<div style="overflow: hidden; height: 2em;">
+<ul class="content__container__list {align}" style="text-align: {align}">
+<li class="content__item" style="padding-bottom: 25px;">{x[1]}</li>
+<li class="content__item" style="padding-bottom: 25px;"><img src="images/Biopol_logo_small-transparent.png" alt="Logo" height="36px"></li>
+<li class="content__item" style="padding-bottom: 25px;">{x[3]}</li>
+<li class="content__item" style="padding-bottom: 25px;"><img src="images/logoNNV.svg" alt="Logo" height="36px"></li>
+</ul>
+</div>')
+}
+
+rotating_textB <- function(x, align = "center") {
+  glue::glue('
+<div style="overflow: hidden; height: 1.2em;">
+<ul class="content__container__list {align}" style="text-align: {align}">
+<li class="content__container__list__item">{x[1]}</li>
+<li class="content__container__list__item">{x[2]}</li>
+<li class="content__container__list__item">{x[3]}</li>
+<li class="content__container__list__item">{x[4]}</li>
+</ul>
+</div>')
+}
+
+
+fa_list <- function(x, incremental = FALSE) {
+  icons <- names(x)
+  fragment <- ifelse(incremental, "fragment", "")
+  items <- glue::glue('<li class="{fragment}"><span class="fa-li"><i class="{icons}"></i></span> {x}</li>')
+  paste('<ul class="fa-ul">', 
+        paste(items, collapse = "\n"),
+        "</ul>", sep = "\n")
+}
+
+
+
+
+```
+
+::: title-box
+<h2>`r rmarkdown::metadata$pagetitle`</h2>
+
+<h3>`r rmarkdown::metadata$subtitle`</h3>
+
+👨‍💻🏻‍💻 [`r rmarkdown::metadata$author`]{.author}
+
+<br>
+
+`r rotating_text(c('<i class="fa-solid fa-envelope"></i> valtyr@BioPol.is','![](images/Biopol_logo_small-transparent.png)', 'Northwest Natural Research center','<i class="fa-solid fa-globe"></i> NNv.is'))`
+:::
+
+
+------------------------------------------------------------------------
+
+## {background-image="images/4.png"}
+<br>
+<br>
+[<span style="font-size:30pt;">[Approximately 50,000 tonnes of herring succumbed to oxygen depletion in winter 2012/13.]{.strokeme}</span>]{.story}
+
+## {background-image="images/sildhne.png"}
+<br>
+<br>
+[<span style="font-size:30pt;">[Approximately 50,000 tonnes of herring succumbed to oxygen depletion in winter 2012/13]{.strokeme}</span>]{.story}
+<br>
+<br>
+[<span style="font-size:30pt;">[These events led to an accumulation of dead herring at the bottom of the fjord, subsequently creating anoxic conditions.]{.strokeme}</span>]{.story}
+
+::: {.notes}
+The dead herring rots fast and the benthic fauna cannot make any use of it, it's just food for bacteria.
+:::
+
+## {background-image="images/robert2013B.png"}
+<br>
+<br>
+[<span style="font-size:30pt;">[Approximately 50,000 tonnes of herring succumbed to oxygen depletion in winter 2012/13.]{.strokeme}</span>]{.story}
+<br>
+<br>
+[<span style="font-size:30pt;">[These events led to an accumulation of dead herring at the bottom of the fjord, subsequently creating anoxic conditions.]{.strokeme}</span>]{.story}
+<br>
+<br>
+[<span style="font-size:30pt;">[In the aftermath, there was a wash-up of dead benthic organisms, such as crabs, starfish and bivalves, on the shores.]{.strokeme}</span>]{.story}
+
+
+
+##  [Kolgrafafjörður]{.strokeme} {background-image="images/2.png" .slide-number:first-child}
+
+::: {.notes}
+This is the peaceful fjord Kolgrafafjörður in Summertime. You can see the road, a landfill and a bridge ove a narrow gap. This is where the herring went inside the secluded area to escape predators and fishing vessels. The bridge was built in 2004 so in 1999 there was an environmental reseach made in beforehand.
+:::
+
+##  [Study Area]{.strokeme} {background-image="images/3.png"}
+
+
+::: {.notes}
+
+the red area is where the herring covered the bottom, it was documented by the marine institute
+yellow dots are the sampling stations,
+the depth is from 12 to 40 meters.
+:::
+
+##  {background-image="images/6b.png"}
+...we went sampling
+
+![](images/VogJOR.jpg){.fragment .r-stretch}
+
+
+::: {.notes}
+This is the first sampling trip in june, 4 months after the catastrophe.
+I was a masters student at the time doing another project on lyssianasid amphipods. So when this came along I was already in the area and excited to take in this project.
+Here Professor Jörundur is saying "look kid, this is all yours"
+:::
+
+
+
+##  {background-image="images/7.png"}
+
+::: {.notes}
+Here are the main results, this is from my masters project. All C. capitata. 
+:::
+
+##  The Impact of the Herring Crisis: 
+
+Fjord Closure Debates and Research Opportunities
+
+::: {.notes}
+the project sparked further interest,
+People were were furious over lost revenue, they wanted to close the fjord so the herring might never escape there again.
+Money was allocated to clean-up and also research so the project continued.
+:::
+
+::: {.r-stack}
+![](images/mynd-vilhelm.jpg){.fragment .r-stretch}
+
+![](images/mynd-stjornarradid.jpg){.fragment .r-stretch}
+
+![](images/mynd-vilhelm-b.jpg){.fragment .r-stretch}
+:::
+
+
+##  Main goals reevaluated
+
+::: {.notes}
+At first our aim was to investigate the immediate impacts of a catastrophe in 2013.
+But with continuing research we could ask bigger questions.
+There had been a mass mortality of herring in Norway in the nineties the species composition and community succession was documented by Eivind Oug and colleagues.
+Guðmundur Víðir was Icelands best guy in polychaetes, he guided me in the masters project
+:::
+
+<br>
+<div class="control-diet" data-id="trt1">Examine **species composition** and **succession** of macrofauna from 2013 to 2017</div>
+<div class="sugar-diet" data-id="trt2"> Document the **eventual return to equilibrium** in the fjord</div>
+
+
+
+::: {.fragment}
+- Drawing from the work of others:
+:::
+
+::: {.fragment}
+<span style="font-size:20pt;">[(Eivind Oug, Tor Eiliv Lein, Regina Küfner & Inger-Britt Falk-Petersen]{.monash-blue2} (1991). Environmental effects of a herring mass mortality in northern Norway. Impact on and recovery of rockyshore and soft-bottom biotas)</span>
+:::
+
+::: {.fragment}
+- ...and Guðmundur Víðir, took over the species sorting.
+:::
+
+
+##  {background-image="images/13.png"}
+
+
+
+##
+![](images/alltnema2016.png)
+
+::: {.notes}
+GV left one year because it was critical for the project to see the final sampling year.
+So I was asked to do the 2016 sorting....
+:::
+
+##
+![](images/alltlika2016.png)
+
+::: {.notes}
+I was lucky that my boss was on a leave for an indefinate amount of time when I took on this project. Because I didn't realize how much time Guðmundur Víðir had saved me. I could bring all the difficult worms to him and he would either show me what they were and how to identify them or he would say don't bother with this one one, it's a syllid ;)
+Anyway the sorting took me more than two years on and off.
+:::
+
+##
+![](images/sp-ind-organic.png)
+
+::: {.notes}
+The red line with error bars is for % of organic material in the sediment
+The dotted line is for the number of species
+The blue line is for the number of individuals.
+This follows the expected plot completely 
+:::
+
+## {background-image="images/DominantPoly.png"}
+
+::: {.notes}
+We continue being as predictable as a movie plot
+:::
+
+## {background-image="images/stationdendo.png"}
+
+::: {.notes}
+We had these regular stations that we sampled every year. This dendrogram is to illustrate the hierarchical relationship among the species found at these stations, allowing us to identify clusters and patterns of similarity 
+We use the Norwegian Quality index as it is recomended by the fisheries institute and you can see it branches out from the other two indexes. The lowercase "n" is for "normalized".
+:::
+
+
+## {background-image="images/11.png"}
+
+::: {.notes}
+This dendogram shows how all the 2013 stations and most of the 2014 stations stand out in the bottom 
+:::
+
+<br>
+<br>
+
+
+<span style="display: inline-block; width: 30%;">
+<b>Normalized Quality indexes.</b>
+</span>
+
+
+
+
+## {background-image="images/sationdendo2.png"}
+
+<br>
+<br>
+
+<span style="display: inline-block; width: 30%;">
+<b>Normalized Quality indexes.</b>
+</span>
+
+<br>
+
+<span style="display: inline-block; width: 30%;">
+The 2013 samples are all at the bottom.
+</span>
+
+
+
+
+## {background-image="images/sationdendo3.png"}
+
+::: {.notes}
+One might expect that the situation in 1999 before the construction of the bridge was pristine but this is something we may have to take a look at in our data.
+:::
+
+
+<br>
+<br>
+
+<span style="display: inline-block; width: 30%;">
+<b>Normalized Quality indexes.</b>
+</span>
+
+<br>
+
+<span style="display: inline-block; width: 30%;">
+The 2013 samples are all at the bottom.
+</span>
+
+<br>
+
+<span style="display: inline-block; width: 30%;">
+The samples from 1999 are not at the top!
+</span>
+
+## 
+
+::: {.notes}
+One last thing that I'm excited about is the matching of our data with the feeding guild data from Bitish Columbia. This will definately give us something to write about in our upcoming paper.
+:::
+
+::: columns
+::: {.column width="50%"}
+
+<br>
+
+- We matched our data with a Canadian dataset that includes detailed information on benthic macro-faunal feeding habits.
+
+- This cross-referencing allowed us to infer feeding guilds, shedding light on marine fauna succession post-catastrophe
+
+:::
+
+::: {.column width="50%"}
+
+![](images/canada.png){width=80%}
+:::
+:::
+
+
+
+
+##  {background-iframe="https://valtyrio.shinyapps.io/docs/" background-interactive="true"}
+
+
+
+##  {background-image="images/12.png"}
+
+::: {.notes}
+These are my collaborators. From our first cruise to be exact. there were many others on later sampling trips, women also. Thank god I didn't bring my camera all the times.
+:::
