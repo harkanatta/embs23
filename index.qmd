@@ -84,6 +84,9 @@ fa_list <- function(x, incremental = FALSE) {
 <br>
 
 `r rotating_text(c('<i class="fa-solid fa-envelope"></i> valtyr@BioPol.is','![](images/Biopol_logo_small-transparent.png)', 'Northwest Natural Research center','<i class="fa-solid fa-globe"></i> NNv.is'))`
+
+<br>  
+<span style="font-size:15pt;">Jón Einar Jónsson, Róbert Arnar Stefánsson, Jörundur Svavarsson, <br> Menja Von Schmalensee, Erla Björk Örnólfsdóttir, Árni Ásgeirsson.</span>
 :::
 
 
