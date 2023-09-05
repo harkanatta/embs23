@@ -4,8 +4,8 @@ subtitle: "A Study of Benthic Community Response to Anoxia"
 abstract: |
  Síldardauðinn maður. 
 author: "Valtýr Sigurðsson"
-date: "4th July 2023"
-host: "Stellenbosch conference"
+date: "5th September 2023"
+host: "EMBS2023"
 institute: "BioPol"
 strip-comments: true
 format: 
@@ -49,7 +49,7 @@ rotating_text <- function(x, align = "center") {
 
 rotating_textB <- function(x, align = "center") {
   glue::glue('
-<div style="overflow: hidden; height: 1.2em;">
+<div style="overflow: hidden; height: 1.25em;">
 <ul class="content__container__list {align}" style="text-align: {align}">
 <li class="content__container__list__item">{x[1]}</li>
 <li class="content__container__list__item">{x[2]}</li>
@@ -85,8 +85,8 @@ fa_list <- function(x, incremental = FALSE) {
 
 `r rotating_text(c('<i class="fa-solid fa-envelope"></i> valtyr@BioPol.is','![](images/Biopol_logo_small-transparent.png)', 'Northwest Natural Research center','<i class="fa-solid fa-globe"></i> NNv.is'))`
 
-<br>  
-<span style="font-size:15pt;">Jón Einar Jónsson, Róbert Arnar Stefánsson, Jörundur Svavarsson, <br> Menja Von Schmalensee, Erla Björk Örnólfsdóttir, Árni Ásgeirsson.</span>
+ 
+<span style="font-size:15pt;">Guðmundur Víðir Helgason†, Jón Einar Jónsson, Róbert Arnar Stefánsson, Jörundur Svavarsson, <br> Menja Von Schmalensee, Erla Björk Örnólfsdóttir, Árni Ásgeirsson.</span>
 :::
 
 
@@ -155,7 +155,7 @@ Here Professor Jörundur is saying "look kid, this is all yours"
 ##  {background-image="images/7.png"}
 
 ::: {.notes}
-Here are the main results, this is from my masters project. All C. capitata. 
+Here are the main results, this is from my masters project. All C. capitata. Capitella capitata thrives in organically polluted conditions, in the absence of other competitors.
 :::
 
 ##  The Impact of the Herring Crisis: 
@@ -278,7 +278,7 @@ This dendogram shows how all the 2013 stations and most of the 2014 stations sta
 <br>
 
 <span style="display: inline-block; width: 30%;">
-The 2013 samples are all at the bottom.
+The 2013 samples are all at the bottom of the graph.
 </span>
 
 
@@ -301,7 +301,7 @@ One might expect that the situation in 1999 before the construction of the bridg
 <br>
 
 <span style="display: inline-block; width: 30%;">
-The 2013 samples are all at the bottom.
+The 2013 samples are all at the bottom of the graph.
 </span>
 
 <br>
@@ -309,6 +309,8 @@ The 2013 samples are all at the bottom.
 <span style="display: inline-block; width: 30%;">
 The samples from 1999 are not at the top!
 </span>
+
+
 
 ## 
 
@@ -338,7 +340,29 @@ One last thing that I'm excited about is the matching of our data with the feedi
 
 ##  {background-iframe="https://valtyrio.shinyapps.io/docs/" background-interactive="true"}
 
+##
 
+::: {.notes}
+The C. capitata is subsurface detritus feeding species and they are in great abundance in the first 2 years. In the second year  predatory species  increased but then they may have come to equilibrium.
+:::
+
+
+![](images/predator-prey.png)
+
+- **Subsurface detritus feeding species** in the mud
+- **Surface predator species** crawling about and feeding on the abuntant detritus feeders until equilibrium?
+
+##
+
+::: {.notes}
+I want to give a shout out to this incredible R package
+:::
+
+![](images/worrms.png)
+
+- **Outdated** or **misspelled names** were plentyful in our data.
+- We used the R package **'worms'** to aid in the verification of species names.
+- 'worms' also provided the taxonomic hierarchy for each species.
 
 ##  {background-image="images/12.png"}
 
